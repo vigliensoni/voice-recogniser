@@ -9,4 +9,4 @@ The model was trained on four classes:
 3. "Foo"
 4. "Yeah"
 
-The classifier is served at: [https://vigliensoni.github.io/voice-recogniser/voiceModel.html](https://vigliensoni.github.io/voice-recogniser/voiceModel.html)
+The classifier is served at: [https://vigliensoni.github.io/voice-recogniser](https://vigliensoni.github.io/voice-recogniser)
