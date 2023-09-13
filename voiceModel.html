@@ -1,7 +1,8 @@
-<div>Teachable Machine Audio Model</div>
-<button type="button" onclick="init()">Start</button>
+<html>
+<div>Teachable Machine Audio Model Gabriel</div>
+<button type="button" id="start-button">Start</button>
 <div id="label-container"></div>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.11.0/dist/tf.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/speech-commands@0.4.0/dist/speech-commands.min.js"></script>
 
 <script type="text/javascript">
@@ -9,11 +10,16 @@
     // https://github.com/tensorflow/tfjs-models/tree/master/speech-commands
 
     // the link to your model provided by Teachable Machine export panel
-    const URL = "./my_model/";
+    // const URL = '*/tm-my-audio-model/';
+    const URL = window.location.origin + "/tm-my-audio-model/"
+    console.log(URL);
+
+    document.getElementById("start-button").addEventListener('click', init);
 
     async function createModel() {
         const checkpointURL = URL + "model.json"; // model topology
         const metadataURL = URL + "metadata.json"; // model metadata
+
 
         const recognizer = speechCommands.create(
             "BROWSER_FFT", // fourier transform type, not useful to change
@@ -56,3 +62,4 @@
         // setTimeout(() => recognizer.stopListening(), 5000);
     }
 </script>
+</html>
